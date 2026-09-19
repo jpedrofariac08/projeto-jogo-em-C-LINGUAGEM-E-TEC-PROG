@@ -274,4 +274,22 @@ Não serão implementados nesta versão:
 
 Essa delimitação foi definida para manter o projeto **viável dentro do tempo disponível** e **compatível com o conteúdo da disciplina**.
 
+---
+
+## 7. Dados Principais
+
+Durante a execução do jogo serão necessários dados para representar:
+
+- Dinheiro do jogador;
+- Dia atual;
+- Quantidade de peixes pescados no dia;
+- Peixes armazenados;
+- Sementes;
+- Plantações;
+- Estado de crescimento das plantações;
+- Quantidade de vacas;
+- Estado da casa atual.
+
+---
+
   
