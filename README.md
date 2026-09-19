@@ -270,8 +270,6 @@ Não serão implementados nesta versão:
 - experiência;
 - salvamento online.
 
----
-
 Essa delimitação foi definida para manter o projeto **viável dentro do tempo disponível** e **compatível com o conteúdo da disciplina**.
 
 ---
