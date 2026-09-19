@@ -14,7 +14,9 @@
 - Felipe de Morais Mayo. RA: 260088452
 - Gustavo Ribeiro
 - Daniel
-  
+
+---
+
 ## 2. Descrição do Projeto
 
 O projeto consiste no desenvolvimento de um jogo de fazendinha executado no terminal, no qual o jogador controla um personagem que vive e trabalha em uma pequena propriedade rural.
