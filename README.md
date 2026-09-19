@@ -31,3 +31,13 @@ O jogador poderá explorar quatro locais principais:
 A casa será utilizada principalmente para consultar informações e dormir, fazendo o dia avançar. No rio, o jogador poderá pescar e obter peixes para vender. Na plantação, poderá plantar, acompanhar o crescimento e colher produtos para venda. O curral terá uma função exclusivamente interativa, permitindo alimentar e acariciar as vacas, sem interferência na economia ou no progresso financeiro do jogo.
 
 ---
+
+## 3. Objetivo do Jogo
+
+O jogador começa com uma quantia inicial de **R$ 100,00** e deve administrar suas atividades para chegar a **R$ 1.000,00**.
+
+Ao alcançar esse valor, poderá comprar a casa melhor e concluir o jogo.
+
+A progressão foi planejada para que o objetivo seja alcançado ao longo de **dois ciclos completos de plantação e pesca**.
+
+---
