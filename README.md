@@ -11,6 +11,6 @@
 ### Integrantes
 
 - João Pedro De Faria. RA: 260018572
-- Felipe Mayo
+- Felipe de Morais Mayo. RA: 260088452
 - Gustavo Ribeiro
 - Daniel
