@@ -274,7 +274,7 @@ Essa delimitação foi definida para manter o projeto **viável dentro do tempo 
 
 ---
 
-## 7. Dados Principais
+## 8. Dados Principais
 
 Durante a execução do jogo serão necessários dados para representar:
 
