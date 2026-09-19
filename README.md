@@ -43,3 +43,36 @@ Ao alcançar esse valor, poderá comprar a casa melhor e concluir o jogo.
 A progressão foi planejada para que o objetivo seja alcançado ao longo de **dois ciclos completos de plantação e pesca**.
 
 ---
+
+## 4. Regras Principais
+
+### 🎣 Pesca
+
+- O jogador pode pescar no máximo **3 vezes por dia**.
+- Cada peixe obtido possui valor de venda.
+- Os peixes ficam disponíveis para venda.
+- A pesca pode ser realizada no mesmo dia em que o jogador realiza atividades na plantação.
+
+### 🌱 Plantação
+
+- Existem **3 espaços de plantação**.
+- Cada semente custa **R$ 10,00**.
+- Cada planta colhida pode ser vendida por **R$ 100,00**.
+- Um ciclo de plantação possui duração de **3 dias**.
+- O jogador poderá realizar as atividades da plantação e pescar no mesmo dia.
+
+### 🐄 Curral
+
+- O jogador poderá visitar o curral.
+- Poderá alimentar e acariciar as vacas.
+- As vacas não geram dinheiro nem produtos.
+- As ações do curral não interferem na economia do jogo, é apenas uma ambientação para a fazenda.
+
+### 😴 Passagem dos dias
+
+- O jogador pode dormir na casa para encerrar o dia.
+- Ao dormir, o dia seguinte começa.
+- O limite diário de pesca é renovado.
+- O crescimento das plantações é atualizado.
+
+---
