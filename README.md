@@ -13,7 +13,7 @@
 - João Pedro De Faria. RA: 260018572
 - Felipe de Morais Mayo. RA: 260088452
 - Gustavo Ribeiro
-- Daniel
+- Daniel Eberharte. RA: 260086482
 
 ---
 
@@ -187,3 +187,91 @@ A escolha desse modelo é adequada porque o jogo é formado por diferentes módu
 - opção de alimentar;
 - opção de acariciar;
 - mensagens de interação sem efeitos econômicos.
+
+# 7. Delimitação do Escopo
+
+O projeto **Vida na Fazenda** consiste no desenvolvimento de um jogo de simulação rural executado em terminal, utilizando a linguagem **C**. O jogador poderá personalizar a partida escolhendo o **nome do personagem** e o **nome da fazenda** antes do início do jogo.
+
+A experiência será organizada por meio de um **menu principal**, a partir do qual o jogador poderá acessar diferentes áreas da fazenda. Entre elas estarão a **Casa**, o **Rio**, a **Plantação**, o **Curral** e a **Loja**, além da opção de **Dormir**, responsável pela passagem dos dias.
+
+Na **Casa**, o jogador poderá consultar informações da partida, como dinheiro disponível, dia atual, inventário, nome do personagem, nome da fazenda e situação da moradia. Esse também será o local onde poderá adquirir uma casa melhor ao atingir o valor necessário.
+
+No **Rio**, será implementado o sistema de pesca, permitindo que o jogador realize até **três pescarias por dia**. Cada pescaria resultará em um peixe, que será armazenado no inventário e poderá ser vendido posteriormente na Loja.
+
+A **Plantação** possuirá **três espaços disponíveis** para cultivo. O jogador poderá utilizar sementes compradas na Loja, plantar, acompanhar o crescimento das plantas ao longo dos dias e realizar a colheita quando estiverem prontas. Os produtos colhidos serão armazenados no inventário e também poderão ser vendidos.
+
+O **Curral** terá uma função de interação e ambientação. Nesse local, o jogador poderá alimentar e acariciar as vacas, sem que essas ações alterem a economia ou a progressão principal da partida.
+
+A **Loja** concentrará as atividades comerciais do jogo. Nela, o jogador poderá comprar sementes e vender os peixes e plantas armazenados no inventário. Todas as operações deverão atualizar corretamente o saldo e as quantidades de itens disponíveis.
+
+O jogo também contará com um **sistema de dias**. A passagem do tempo ocorrerá somente quando o jogador escolher a opção **Dormir**. Ao iniciar um novo dia, o limite de pesca será renovado e o crescimento das plantações será atualizado.
+
+A progressão principal será baseada na obtenção e administração de dinheiro por meio da pesca e da agricultura. O jogador começará com **R$ 100,00** e deverá alcançar **R$ 1.000,00** para comprar uma casa melhor. A compra da nova casa representará a **condição de vitória** e encerrará a partida.
+
+O projeto também utilizará **Git e GitHub** para controle de versão e acompanhamento do desenvolvimento incremental realizado pelos integrantes do grupo.
+
+---
+
+## 7.1 Dentro do escopo
+
+O jogo deverá possuir:
+
+- execução em terminal;
+- desenvolvimento em linguagem C;
+- escolha do nome do personagem;
+- escolha do nome da fazenda;
+- menu principal;
+- Casa;
+- Rio;
+- Plantação;
+- Curral;
+- Loja;
+- sistema de pesca;
+- limite de 3 pescarias por dia;
+- inventário de peixes;
+- compra de sementes;
+- 3 espaços de plantação;
+- crescimento de plantas;
+- colheita;
+- inventário de plantas;
+- compra e venda de itens;
+- sistema de dinheiro;
+- sistema de dias;
+- opção Dormir;
+- compra da casa melhor;
+- condição de vitória;
+- opção de sair do jogo;
+- validação das principais entradas.
+
+---
+
+## 7.2 Fora do escopo
+
+Não serão implementados nesta versão:
+
+- sistema de energia ou stamina;
+- combate;
+- inimigos;
+- multiplayer;
+- sistema de contas ou login;
+- conexão com a internet;
+- banco de dados;
+- gráficos 2D ou 3D;
+- interface gráfica;
+- sistema de clima;
+- estações do ano;
+- missões;
+- NPCs complexos;
+- criação de animais;
+- produção de leite ou outros produtos pelo curral;
+- venda de produtos provenientes das vacas;
+- ferramentas com melhorias;
+- sistema de níveis;
+- experiência;
+- salvamento online.
+
+---
+
+Essa delimitação foi definida para manter o projeto **viável dentro do tempo disponível** e **compatível com o conteúdo da disciplina**.
+
+  
