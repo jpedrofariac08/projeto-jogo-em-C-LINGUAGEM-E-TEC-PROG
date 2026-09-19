@@ -129,3 +129,61 @@ Lucro da plantação:
 Ao comprar a casa melhor, o jogador conclui o objetivo principal e o jogo termina.
 
 ---
+
+## 6. Processo de Desenvolvimento
+
+O projeto utilizará um **modelo de desenvolvimento incremental**.
+
+Nesse modelo, o sistema não é desenvolvido completamente de uma única vez. O jogo será construído por etapas, e cada nova etapa adicionará funcionalidades ao que já foi implementado anteriormente.
+
+A escolha desse modelo é adequada porque o jogo é formado por diferentes módulos relativamente independentes, como pesca, plantação, loja, curral, passagem de dias e compra da casa. Dessa forma, cada parte poderá ser implementada, testada e posteriormente integrada ao restante do programa.
+
+### 6.1 Incrementos previstos
+
+#### Incremento 1 — Estrutura básica
+
+- criação do programa principal;
+- entrada do nome do personagem;
+- entrada do nome da fazenda;
+- inicialização das variáveis;
+- criação do menu principal;
+- navegação entre as opções.
+
+#### Incremento 2 — Casa e passagem dos dias
+
+- criação da área da Casa;
+- exibição das informações do jogador;
+- implementação da opção Dormir;
+- atualização do dia;
+- reinicialização do limite diário de pesca.
+
+#### Incremento 3 — Sistema de pesca
+
+- criação da área do Rio;
+- implementação da pesca;
+- limite de 3 pescarias por dia;
+- armazenamento dos peixes no inventário.
+
+#### Incremento 4 — Sistema de plantação
+
+- implementação dos 3 espaços de plantação;
+- uso de sementes;
+- plantio;
+- controle do crescimento;
+- colheita;
+- armazenamento das plantas colhidas.
+
+#### Incremento 5 — Loja e economia
+
+- compra de sementes;
+- venda de peixes;
+- venda de plantas;
+- atualização do dinheiro;
+- validação das quantidades disponíveis.
+
+#### Incremento 6 — Curral
+
+- interação com as vacas;
+- opção de alimentar;
+- opção de acariciar;
+- mensagens de interação sem efeitos econômicos.
