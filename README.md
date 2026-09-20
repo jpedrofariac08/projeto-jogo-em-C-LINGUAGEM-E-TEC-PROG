@@ -290,4 +290,16 @@ Durante a execução do jogo serão necessários dados para representar:
 
 ---
 
+## 9. Tecnologias e Recursos
+
+- Linguagem de programação **C**;
+- Execução em **terminal/console**;
+- Git e GitHub para controle de versão;
+- Estruturas condicionais;
+- Estruturas de repetição;
+- Funções;
+- Variáveis e tipos de dados;
+- Vetores e/ou estruturas (`struct`), conforme necessidade da implementação.
+
+---
   
