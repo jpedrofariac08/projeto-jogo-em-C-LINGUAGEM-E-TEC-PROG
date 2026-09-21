@@ -71,13 +71,13 @@ Não fazem parte desta versão sistemas de energia ou stamina, combate, inimigos
    - Crescimento das plantas registrado individualmente.
 
  6.⁠ ⁠Após a inicialização, será exibido o menu principal com as opções:
-   - 1. Casa
-   - 2. Rio
-   - 3. Plantação
-   - 4. Curral
-   - 5. Loja
-   - 6. Dormir
-   - 0. Sair
+   - 1 Casa
+   - 2 Rio
+   - 3 Plantação
+   - 4 Curral
+   - 5 Loja
+   - 6 Dormir
+   - 0 Sair
 
  7.⁠ ⁠O sistema solicitará ao jogador qual opção deseja acessar.
 
