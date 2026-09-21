@@ -24,7 +24,7 @@ A passagem dos dias ocorrerá somente quando o jogador escolher a opção “Dor
 
 A pesca vai ter um limite de três pescarias por dia. Cada peixe poderá ser vendido por R$ 20,00.
 
-A plantação terá três espaços. Cada semente custa R$ 10,00. Cada planta colhida poderá ser vendida por R$ 100,00. O crescimento de cada planta leva três dias. O dia do plantio contará como o primeiro dia do ciclo.
+A plantação terá três espaços. Cada semente custa R$ 10,00. Cada planta colhida poderá ser vendida por R$ 100,00. O crescimento de cada planta leva três dias, o dia do plantio contará como o primeiro dia do ciclo.
 
 A progressão econômica foi planejada para dois ciclos completos de plantação e pesca:
 
