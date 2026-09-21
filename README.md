@@ -12,7 +12,7 @@ O MODELO PEDIDO PELO PROFESSOR ESTA NO MODELOdc1ªentrega.md !
 
 - João Pedro De Faria. RA: 260018572
 - Felipe de Morais Mayo. RA: 260088452
-- Gustavo Ribeiro
+- Gustavo Santo Lojor Ribeiro RA: 260066332
 - Daniel Eberharte. RA: 260086482
 
 ---
