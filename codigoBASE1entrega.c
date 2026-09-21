@@ -193,5 +193,17 @@ nomeFazenda
         case 3:
         plantacao();
         break;
+
+        case 4:
+        celeiro();
+        break;
+
+        case 5:
+        loja();
+        break;
+
+        case 6:
+        dormir();
+        break;
     }
  }
