@@ -180,3 +180,17 @@ nomeFazenda
 );
 printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
 scanf("%d", &opLUGAR);
+switch(opLUGAR){
+    case 1:
+    casa(nomePersonagem, nomeFazenda);
+    break;
+
+    case 2:
+    lago();
+    break;
+
+    case 3:
+    plantacao();
+    break;
+}
+}
