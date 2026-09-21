@@ -238,3 +238,32 @@ Não fazem parte desta versão sistemas de energia ou stamina, combate, inimigos
 62.⁠ ⁠Caso o usuário informe uma opção inexistente no menu, o sistema exibirá uma mensagem de opção inválida e retornará ao menu principal.
 
 ---
+
+## 3. Fluxograma da Lógica do Sistema
+
+O fluxograma representa a lógica de funcionamento do sistema desde a inicialização da partida até o encerramento do jogo.
+
+Ele apresenta:
+
+- Entrada do nome do personagem;
+- Entrada do nome da fazenda;
+- Inicialização das variáveis;
+- Menu principal;
+- Acesso à Casa;
+- Sistema de pesca;
+- Sistema de plantação;
+- Interações do Curral;
+- Sistema da Loja;
+- Passagem dos dias;
+- Verificação da compra da casa melhor;
+- Condição de vitória;
+- Opção de saída;
+- Tratamento de opções inválidas.
+
+### Fluxograma Principal
+
+[fluxograma detalhado](./fluxogramadetalhado-FINAL.pdf)
+
+O fluxograma também está disponível em formato PDF no repositório do projeto.
+
+---
