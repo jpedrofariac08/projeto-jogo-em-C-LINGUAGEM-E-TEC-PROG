@@ -1,5 +1,5 @@
 # Projeto do jogo em C LINGUAGEM-E-TEC-PROG
-O MODELO PEDIDO PELO PROFESSOR ESTA NO MODELOdc1ªentrega.md!
+O MODELO PEDIDO PELO PROFESSOR ESTA NO MODELOdc1ªentrega.md !
 ## 1. Identificação do Projeto
 
 **Instituição:** Unicesumar – Maringá  
