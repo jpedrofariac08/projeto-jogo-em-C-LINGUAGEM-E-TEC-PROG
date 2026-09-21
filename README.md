@@ -302,4 +302,8 @@ Durante a execução do jogo serão necessários dados para representar:
 - Vetores e/ou estruturas (`struct`), conforme necessidade da implementação.
 
 ---
-  
+
+## 10. Condição de Vitória
+
+O jogador vence quando acumula R$ 1.000,00 e compra a casa melhor.
+Após a compra, será apresentada uma mensagem de conclusão, encerrando a partida.
