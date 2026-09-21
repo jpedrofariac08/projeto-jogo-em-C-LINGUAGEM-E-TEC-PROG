@@ -48,3 +48,193 @@ O projeto será executado exclusivamente em terminal e desenvolvido em C. Serão
 Não fazem parte desta versão sistemas de energia ou stamina, combate, inimigos, multiplayer, contas ou login, conexão com a internet, banco de dados, gráficos 2D ou 3D, interface gráfica, clima, estações do ano, missões, NPCs complexos, criação de animais, produção de leite, venda de produtos das vacas, ferramentas com melhorias, níveis, experiência ou salvamento online.
 
 ---
+
+## 2. Fluxo de Utilização Esperado para o Sistema
+
+ 1.⁠ ⁠Ao iniciar o programa, o sistema solicitará o nome do personagem.
+
+ 2.⁠ ⁠O nome informado será armazenado na variável ⁠ nomePersonagem ⁠.
+
+ 3.⁠ ⁠Em seguida, o sistema solicitará o nome da fazenda.
+
+ 4.⁠ ⁠O nome informado será armazenado na variável ⁠ nomeFazenda ⁠.
+
+ 5.⁠ ⁠O sistema inicializará a partida com:
+   - Dia = 1;
+   - Dinheiro = R$ 100,00;
+   - Casa = simples;
+   - Peixes = 0;
+   - Sementes = 0;
+   - Plantas = 0;
+   - Tentativas de pesca no dia = 0;
+   - 3 espaços de plantação vazios;
+   - Crescimento das plantas registrado individualmente.
+
+ 6.⁠ ⁠Após a inicialização, será exibido o menu principal com as opções:
+   - 1. Casa
+   - 2. Rio
+   - 3. Plantação
+   - 4. Curral
+   - 5. Loja
+   - 6. Dormir
+   - 0. Sair
+
+ 7.⁠ ⁠O sistema solicitará ao jogador qual opção deseja acessar.
+
+ 8.⁠ ⁠Caso seja escolhida a opção *1 — Casa*, o sistema exibirá:
+   - Nome do personagem;
+   - Nome da fazenda;
+   - Dia atual;
+   - Dinheiro;
+   - Casa atual;
+   - Inventário.
+
+ 9.⁠ ⁠Na Casa, o sistema verificará se o jogador possui pelo menos R$ 1.000,00.
+
+10.⁠ ⁠Caso não possua o valor necessário, será exibida uma mensagem informando que o dinheiro é insuficiente para comprar a casa melhor e o jogador retornará ao menu principal.
+
+11.⁠ ⁠Caso possua R$ 1.000,00 ou mais, o sistema perguntará se deseja comprar a casa melhor.
+
+12.⁠ ⁠Se a compra for realizada:
+   - R$ 1.000,00 será retirado do dinheiro;
+   - A casa atual será alterada para a casa melhor;
+   - A compra será confirmada;
+   - Será exibida a mensagem de vitória;
+   - O jogo será encerrado.
+
+13.⁠ ⁠Caso seja escolhida a opção *2 — Rio*, o sistema permitirá realizar uma pescaria.
+
+14.⁠ ⁠Antes da pesca, será verificado se ⁠ tentativasPescaDia ⁠ é menor que 3.
+
+15.⁠ ⁠Caso o limite de três pescarias já tenha sido atingido, o sistema informará que o limite diário foi alcançado e retornará ao menu principal.
+
+16.⁠ ⁠Caso ainda exista uma tentativa disponível:
+   - Será pescado um peixe;
+   - ⁠ peixes ⁠ será incrementado em 1;
+   - ⁠ tentativasPescaDia ⁠ será incrementado em 1;
+   - Será exibida uma mensagem informando a captura;
+   - O jogador retornará ao menu principal.
+
+17.⁠ ⁠Caso seja escolhida a opção *3 — Plantação*, o sistema exibirá os três espaços e seus respectivos estados.
+
+18.⁠ ⁠O jogador poderá escolher entre:
+   - Visualizar;
+   - Plantar;
+   - Colher.
+
+19.⁠ ⁠Para plantar, o sistema verificará se existe espaço disponível.
+
+20.⁠ ⁠Caso não exista espaço disponível, será exibida uma mensagem informando que não existem espaços disponíveis.
+
+21.⁠ ⁠Caso exista espaço, o sistema verificará se o jogador possui sementes.
+
+22.⁠ ⁠Caso não possua sementes, será exibida uma mensagem informando que é necessário comprar sementes na Loja.
+
+23.⁠ ⁠Caso possua sementes:
+   - Uma semente será consumida;
+   - O espaço será ocupado;
+   - O plantio será registrado;
+   - O crescimento da planta será iniciado.
+
+24.⁠ ⁠Cada planta terá seu crescimento controlado individualmente por três dias.
+
+25.⁠ ⁠Para colher, o jogador deverá selecionar uma planta que esteja plantada.
+
+26.⁠ ⁠O sistema verificará se a planta está pronta.
+
+27.⁠ ⁠Caso ainda não esteja pronta, será exibida uma mensagem informando que a planta ainda não pode ser colhida.
+
+28.⁠ ⁠Caso esteja pronta:
+   - A planta será colhida;
+   - ⁠ plantas ⁠ será incrementado em 1;
+   - O espaço será liberado;
+   - O sistema informará que a planta poderá ser vendida na Loja.
+
+29.⁠ ⁠Caso seja escolhida a opção *4 — Curral*, o jogador poderá escolher uma interação com as vacas.
+
+30.⁠ ⁠As opções de interação serão:
+   - Acariciar;
+   - Alimentar.
+
+31.⁠ ⁠Essas ações exibirão mensagens de interação, mas não alterarão dinheiro, inventário, preços, peixes, plantas, dia, crescimento ou condição de vitória.
+
+32.⁠ ⁠Caso seja escolhida a opção *5 — Loja*, será exibido o menu:
+   - 1. Comprar sementes;
+   - 2. Vender peixes;
+   - 3. Vender plantas;
+   - 0. Voltar.
+
+33.⁠ ⁠Ao escolher *1 — Comprar sementes*, o sistema solicitará a quantidade desejada.
+
+34.⁠ ⁠A quantidade deverá ser maior que zero.
+
+35.⁠ ⁠O sistema calculará o valor da compra:
+
+   ⁠ quantidade × R$ 10,00 ⁠
+
+36.⁠ ⁠Será verificado se o jogador possui dinheiro suficiente.
+
+37.⁠ ⁠Caso não possua dinheiro suficiente, será exibida uma mensagem e o jogador retornará à Loja.
+
+38.⁠ ⁠Caso possua dinheiro suficiente:
+   - O valor da compra será descontado;
+   - A quantidade de sementes será adicionada;
+   - A compra será confirmada;
+   - O jogador retornará à Loja.
+
+39.⁠ ⁠Ao escolher *2 — Vender peixes*, o sistema verificará se existem peixes disponíveis.
+
+40.⁠ ⁠Caso não existam peixes, será exibida uma mensagem informando que não há peixes para vender.
+
+41.⁠ ⁠Caso existam peixes, o sistema solicitará a quantidade desejada.
+
+42.⁠ ⁠A quantidade deverá ser maior que zero e menor ou igual à quantidade de peixes disponíveis.
+
+43.⁠ ⁠Caso a quantidade seja inválida, o sistema informará o erro e retornará à Loja.
+
+44.⁠ ⁠Caso seja válida, o sistema calculará:
+
+   ⁠ quantidade × R$ 20,00 ⁠
+
+45.⁠ ⁠O valor será adicionado ao dinheiro e a quantidade de peixes vendida será retirada do inventário.
+
+46.⁠ ⁠Ao escolher *3 — Vender plantas*, o sistema verificará se existem plantas disponíveis.
+
+47.⁠ ⁠Caso não existam plantas, será exibida uma mensagem informando que não há plantas para vender.
+
+48.⁠ ⁠Caso existam plantas, o sistema solicitará a quantidade desejada.
+
+49.⁠ ⁠A quantidade deverá ser maior que zero e menor ou igual à quantidade de plantas disponíveis.
+
+50.⁠ ⁠Caso a quantidade seja inválida, o sistema informará o erro e retornará à Loja.
+
+51.⁠ ⁠Caso seja válida, o sistema calculará:
+
+   ⁠ quantidade × R$ 100,00 ⁠
+
+52.⁠ ⁠O valor será adicionado ao dinheiro e a quantidade de plantas vendida será retirada do inventário.
+
+53.⁠ ⁠Caso seja escolhida a opção *6 — Dormir*, o sistema encerrará o dia atual.
+
+54.⁠ ⁠Ao dormir:
+   - ⁠ dia ⁠ será incrementado em 1;
+   - ⁠ tentativasPescaDia ⁠ será zerado;
+   - O crescimento das plantas será atualizado.
+
+55.⁠ ⁠Para cada planta existente, seu crescimento será incrementado e será verificado se atingiu três dias.
+
+56.⁠ ⁠Caso o crescimento seja igual ou superior a três dias, a planta será marcada como pronta para colheita.
+
+57.⁠ ⁠Caso ainda não tenha atingido três dias, a planta continuará crescendo.
+
+58.⁠ ⁠O dia do plantio será considerado como o primeiro dia do ciclo de crescimento.
+
+59.⁠ ⁠Pescar, plantar, colher e realizar operações na Loja não fazem o dia avançar.
+
+60.⁠ ⁠Caso seja escolhida a opção *0 — Sair*, o programa será encerrado.
+
+61.⁠ ⁠Sair do programa não representa uma vitória.
+
+62.⁠ ⁠Caso o usuário informe uma opção inexistente no menu, o sistema exibirá uma mensagem de opção inválida e retornará ao menu principal.
+
+---
