@@ -240,9 +240,22 @@ if(opLoja == 1){
 }
 }
 
-void dormir(){
+void dormir(){    
+{
+    int opDormir;
+    printf("1-Dormir\n2-Sair\n");
+    scanf("%d",&opDormir);
 
-}
+    if (opDormir == 1){
+    printf("+------------+\n"
+           "|   Z z     |\n"
+           "|    O      |\n"
+           "|   /|\\__  |\n"
+           "|   / \\    |\n"
+           "+------------+\n");
+
+}else printf("SAINDO...");
+
 int main()
 {
     char nomePersonagem[100], nomeFazenda[100];
