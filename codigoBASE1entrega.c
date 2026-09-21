@@ -246,7 +246,7 @@ void dormir(){
     printf("1-Dormir\n2-Sair\n");
     scanf("%d",&opDormir);
 
-    if (opDormir == 1){
+    if (opDormir == 1){                       //Ainda sem a função de acrescentar o um dia, progesso de plantação e reinicio de pescas disponiveis
     printf("+------------+\n"
            "|   Z z     |\n"
            "|    O      |\n"
