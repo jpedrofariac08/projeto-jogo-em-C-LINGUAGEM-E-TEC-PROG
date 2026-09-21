@@ -27,15 +27,15 @@ printf(
 "Seu nome: %s\n"
 "1- Abrir inventario\n0- Sair\nEscolha sua acao: \n", nomeFazenda, nomePersonagem
 );
-scanf("%d", &opCasa);
-    if(opCasa == 1){
-        printf("Dinheiro: x\nSementes: x\nPeixes: x\nPlantas: x");//, dinheiro, sementes, peixes, plantas); não sabemos guardar informações como itens, pois não foi ensinado.
-    }else if(opCasa == 0){
-        return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
-    }else{
-        printf("Opcao invalida!!");
+    scanf("%d", &opCasa);
+        if(opCasa == 1){
+            printf("Dinheiro: x\nSementes: x\nPeixes: x\nPlantas: x");//, dinheiro, sementes, peixes, plantas); não sabemos guardar informações como itens, pois não foi ensinado.
+        }else if(opCasa == 0){
+            return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
+        }else{
+            printf("Opcao invalida!!");
+        }
     }
-}
 void lago(){
     int peixes, tentativasPescaDia, opLago;
     printf(
@@ -72,15 +72,16 @@ void lago(){
 "                     O LAGO ESTA PRONTO PARA PESCAR                           \n"
 "\n"
 );
-printf("1-Pescar\n0-Sair\n===============================================================================\nEscolha sua acao:");
-scanf("%d", &opLago);
-if (opLago == 1){
-    printf("Parabens, voce pegou 1 peixe!!\n><>");
-}else if(opLago == 0){
-    return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
-} else{
-    printf("Opcao invalida!!");
-}}
+    printf("1-Pescar\n0-Sair\n===============================================================================\nEscolha sua acao:");
+    scanf("%d", &opLago);
+    if (opLago == 1){
+        printf("Parabens, voce pegou 1 peixe!!\n><>");
+    }else if(opLago == 0){
+        return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
+    } else{
+        printf("Opcao invalida!!");
+    }
+    }
 void plantacao(){
     int crescimento[3], espacosPlantacao[3];
     int plantas, opPlantacao;
@@ -112,18 +113,18 @@ printf(
 "                     A PLANTACAO ESTA PRONTA PARA COLHEITA                    \n"
 "\n"
     );
-printf("1-Plantar\n2-Regar plantacao\n0-Sair\n===============================================================================\nEscolha sua acao:");
-scanf("%d", &opPlantacao);
-if (opPlantacao == 1){
-    printf("Sementes plantadas!!");
-} else if (opPlantacao == 2){
-    printf("Voce regou as plantas, agora elas cresceram mais saudaveis!!");
-} else if (opPlantacao == 0){
-    return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
-} else{
-    printf("Opcao invalida!!");
-}
-}
+    printf("1-Plantar\n2-Regar plantacao\n0-Sair\n===============================================================================\nEscolha sua acao:");
+    scanf("%d", &opPlantacao);
+    if (opPlantacao == 1){
+        printf("Sementes plantadas!!");
+    } else if (opPlantacao == 2){
+        printf("Voce regou as plantas, agora elas cresceram mais saudaveis!!");
+    } else if (opPlantacao == 0){
+        return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
+    } else{
+        printf("Opcao invalida!!");
+    }
+  }
 int main()
 {
     char nomePersonagem[100], nomeFazenda[100];
@@ -178,19 +179,19 @@ int main()
 "============================================================\n",
 nomeFazenda
 );
-printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
-scanf("%d", &opLUGAR);
-switch(opLUGAR){
-    case 1:
-    casa(nomePersonagem, nomeFazenda);
-    break;
+    printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
+    scanf("%d", &opLUGAR);
+    switch(opLUGAR){
+        case 1:
+        casa(nomePersonagem, nomeFazenda);
+        break;
 
-    case 2:
-    lago();
-    break;
+        case 2:
+        lago();
+        break;
 
-    case 3:
-    plantacao();
-    break;
-}
-}
+        case 3:
+        plantacao();
+        break;
+    }
+ }
