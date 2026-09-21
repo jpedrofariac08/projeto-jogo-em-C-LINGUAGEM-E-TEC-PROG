@@ -1,6 +1,6 @@
 # Título do Projeto: Vida na Fazenda
 
-##1. Descrição do Sistema
+## 1. Descrição do Sistema
 
 O projeto consiste no desenvolvimento de um jogo de simulação rural executado em terminal, utilizando a linguagem C. Nele, o jogador controlará um personagem que vive e trabalha em uma pequena propriedade rural herdada de seu pai.
 Antes de iniciar a partida, o jogador poderá escolher o nome do personagem e o nome da fazenda. O jogo começará com R$ 100,00, uma casa simples, nenhum peixe, nenhuma semente e nenhuma planta.
