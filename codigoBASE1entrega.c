@@ -240,22 +240,27 @@ if(opLoja == 1){
 }
 }
 
-void dormir(){    
-{
+void dormir(){  
+
     int opDormir;
-    printf("1-Dormir\n2-Sair\n");
+    printf("=====================================================================================================\n1-Dormir\n0-Sair\n");
     scanf("%d",&opDormir);
 
     if (opDormir == 1){                       //Ainda sem a função de acrescentar o um dia, progesso de plantação e reinicio de pescas disponiveis
-    printf("+------------+\n"
-           "|   Z z     |\n"
-           "|    O      |\n"
-           "|   /|\\__  |\n"
-           "|   / \\    |\n"
+    printf("=========================\n"
+           "          CAMA           \n"
+           "=========================\n"
+           "+------------+\n"
+           "|   Z z      |\n"
+           "|    O       |\n"
+           "|   /|\\__    |\n"
+           "|   / \\      |\n"
            "+------------+\n");
-
-}else printf("SAINDO...");
-
+    printf("=========================\n");
+} else if (opDormir == 0) {
+    return;
+}
+}
 int main()
 {
     char nomePersonagem[100], nomeFazenda[100];
