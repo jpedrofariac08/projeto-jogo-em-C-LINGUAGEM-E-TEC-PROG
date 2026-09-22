@@ -243,10 +243,10 @@ if(opLoja == 1){
 void dormir(){  
 
     int opDormir;
-    printf("=====================================================================================================\n1-Dormir\n0-Sair\n");
+    printf("===================================\n1-Dormir\n0-Sair\n");
     scanf("%d",&opDormir);
 
-    if (opDormir == 1){                       //Ainda sem a função de acrescentar o um dia, progesso de plantação e reinicio de pescas disponiveis
+    if (opDormir == 1){//Ainda sem a função de acrescentar o um dia, progesso de plantação e reinicio de pescas disponiveis.
     printf("=========================\n"
            "          CAMA           \n"
            "=========================\n"
@@ -257,9 +257,19 @@ void dormir(){
            "|   / \\      |\n"
            "+------------+\n");
     printf("=========================\n");
+    printf("+----------------------+\n"
+           "|      \\   |   /       |\n"
+           "|        .---.         |\n"
+           "|    -- (* ^ *) --     |\n"
+           "|        `---'         |\n"
+           "|      /   |   \\       |\n"
+           "+----------------------+\nO Sol nasce em mais um dia lindo!!!\n=========================");
+    
 } else if (opDormir == 0) {
     return;
-}
+}else{
+    printf("Opcao invalida");
+}        
 }
 int main()
 {
@@ -315,7 +325,7 @@ int main()
 "============================================================\n",
 nomeFazenda
 );
-    printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
+    printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\nEscolha o lugar que voce quer ir: ");
     scanf("%d", &opLUGAR);
     switch(opLUGAR){
         case 1:
@@ -342,4 +352,4 @@ nomeFazenda
         dormir();
         break;
     }
- }
+}
