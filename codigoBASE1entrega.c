@@ -126,7 +126,39 @@ if (opPlantacao == 1){
 }
 }
 void celeiro(){
+    int opCeleiro;
+    printf(
+"==================================\n"
+"            CELEIRO               \n"
+"==================================\n"
+"+--------------------------------+\n"
+"|           ^__^                 |\n"
+"|           (oo)\\_______         |\n"
+"|           (__)\\       )\\/\\     |\n"
+"|               ||----w |        |\n"
+"|               ||     ||        |\n"
+"|                                |\n"
+"|   ~~~~~~~~~~~~~~~~~~~~~~~~~~   |\n"
+"|   |  |  |  |  |  |  |  |  |  | |\n"
+"|   |__|__|__|__|__|__|__|__|__| |\n"
+"+--------------------------------+\n"
+"\n"
+"1- Alimentar as vacas\n"
+"2- Acariciar as vacas\n"
+"0- Sair\n"
+"Escolha sua acao: "
+    );
+    scanf("%d", &opCeleiro);
 
+    if (opCeleiro == 1) {
+        printf("\nVoce alimentou as vacas. Elas parecem satisfeitas!\n");
+    } else if (opCeleiro == 2) {
+        printf("\nVoce acariciou as vacas. Muuuu!\n");
+    } else if (opCeleiro == 0) {
+        return;
+    } else {
+        printf("\nOpcao invalida!\n");
+    }
 }
 void loja(){
     int opLoja, opVenda, opCompra;
