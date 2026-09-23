@@ -1,5 +1,26 @@
 # Projeto do jogo em C LINGUAGEM-E-TEC-PROG
+
 O MODELO PEDIDO PELO PROFESSOR ESTA NO MODELOdc1ªentrega.md !
+
+## Índice
+
+1. [Identificação do Projeto](#1-identificação-do-projeto)
+2. [Descrição do Projeto](#2-descrição-do-projeto)
+3. [Objetivo do Jogo](#3-objetivo-do-jogo)
+4. [Regras Principais](#4-regras-principais)
+5. [Sistema Econômico](#5-sistema-econômico)
+6. [Processo de Desenvolvimento](#6-processo-de-desenvolvimento)
+   - 6.1 [Incrementos previstos](#61-incrementos-previstos)
+7. [Delimitação do Escopo](#7-delimitação-do-escopo)
+   - 7.1 [Dentro do escopo](#71-dentro-do-escopo)
+   - 7.2 [Fora do escopo](#72-fora-do-escopo)
+8. [Dados Principais](#8-dados-principais)
+9. [Estrutura de Dados](#9-estrutura-de-dados)
+10. [Tecnologias e Recursos](#10-tecnologias-e-recursos)
+11. [Condição de Vitória](#11-condição-de-vitória)
+
+---
+
 ## 1. Identificação do Projeto
 
 **Instituição:** Unicesumar – Maringá  
@@ -188,7 +209,9 @@ A escolha desse modelo é adequada porque o jogo é formado por diferentes módu
 - opção de acariciar;
 - mensagens de interação sem efeitos econômicos.
 
-# 7. Delimitação do Escopo
+---
+
+## 7. Delimitação do Escopo
 
 O projeto **Vida na Fazenda** consiste no desenvolvimento de um jogo de simulação rural executado em terminal, utilizando a linguagem **C**. O jogador poderá personalizar a partida escolhendo o **nome do personagem** e o **nome da fazenda** antes do início do jogo.
 
@@ -212,7 +235,7 @@ O projeto também utilizará **Git e GitHub** para controle de versão e acompan
 
 ---
 
-## 7.1 Dentro do escopo
+### 7.1 Dentro do escopo
 
 O jogo deverá possuir:
 
@@ -245,7 +268,7 @@ O jogo deverá possuir:
 
 ---
 
-## 7.2 Fora do escopo
+### 7.2 Fora do escopo
 
 Não serão implementados nesta versão:
 
@@ -290,7 +313,33 @@ Durante a execução do jogo serão necessários dados para representar:
 
 ---
 
-## 9. Tecnologias e Recursos
+## 9. Estrutura de Dados
+
+O sistema utilizará variáveis para armazenar e controlar as informações necessárias durante a execução do jogo.
+
+As principais variáveis serão:
+
+```c
+char nomePersonagem[100];
+char nomeFazenda[100];
+
+int dia;
+float dinheiro;
+int casaAtual;
+
+int sementes;
+int peixes;
+int plantas;
+
+int tentativasPescaDia;
+
+int espacosPlantacao[3];
+int crescimento[3];
+```
+
+---
+
+## 10. Tecnologias e Recursos
 
 - Linguagem de programação **C**;
 - Execução em **terminal/console**;
@@ -303,7 +352,7 @@ Durante a execução do jogo serão necessários dados para representar:
 
 ---
 
-## 10. Condição de Vitória
+## 11. Condição de Vitória
 
 O jogador vence quando acumula R$ 1.000,00 e compra a casa melhor.
 Após a compra, será apresentada uma mensagem de conclusão, encerrando a partida.
