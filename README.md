@@ -40,7 +40,7 @@ O MODELO PEDIDO PELO PROFESSOR ESTA na pasta DOCUMENTO_1ªentrega !
 
 ## 2. Descrição do Projeto
 
-O projeto consiste no desenvolvimento de um jogo de fazendinha executado no terminal, no qual o jogador controla um personagem que vive e trabalha em uma pequena propriedade rural herdada de seu pai.
+O projeto consiste no desenvolvimento de um jogo de fazendinha executado no terminal, no qual o jogador controla um personagem que vive e trabalha em uma pequena propriedade rural.
 
 O objetivo principal é conseguir dinheiro por meio das atividades realizadas na fazenda e, ao final de dois ciclos completos de produção, comprar uma casa melhor.
 
