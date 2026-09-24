@@ -76,9 +76,9 @@ void lago(){
 printf("1-Pescar\n0-Sair\n===============================================================================\nEscolha sua acao:");
 scanf("%d", &opLago);
 if (opLago == 1){
-    printf("Parabens, voce pegou 1 peixe!!\n><>");
+    printf("Parabens, voce pegou 1 peixe!!\n><>"); //Inventário e pesca ainda não foi implementado.
 }else if(opLago == 0){
-    return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
+    return; //Laço de repetição ainda não foi ensinado.
 } else{
     printf("Opcao invalida!!");
 }
@@ -117,7 +117,7 @@ printf(
 printf("1-Plantar\n2-Regar plantacao\n0-Sair\n===============================================================================\nEscolha sua acao:");
 scanf("%d", &opPlantacao);
 if (opPlantacao == 1){
-    printf("Sementes plantadas!!");
+    printf("Sementes plantadas!!"); //Progesso de plantação e inventário não implementados por enquanto.
 } else if (opPlantacao == 2){
     printf("Voce regou as plantas, agora elas cresceram mais saudaveis!!");
 } else if (opPlantacao == 0){
@@ -126,11 +126,11 @@ if (opPlantacao == 1){
     printf("Opcao invalida!!");
 }
 }
-void celeiro(){
-    int opCeleiro;
+void celeiro(){ 
+    int opCeleiro; // Não a consumo de intens, sistema de fome ou qualquer outra consequência no jogo.
     printf(
 "==================================\n"
-"            CELEIRO               \n"
+"             CELEIRO              \n"
 "==================================\n"
 "+--------------------------------+\n"
 "|           ^__^                 |\n"
@@ -144,8 +144,8 @@ void celeiro(){
 "|   |__|__|__|__|__|__|__|__|__| |\n"
 "+--------------------------------+\n"
 "\n"
-"1- Alimentar as vacas\n"
-"2- Acariciar as vacas\n"
+"1- Alimentar as vacas\n" //Apenas para ambientação, gera uma menssagem visual para o jogador.
+"2- Acariciar as vacas\n" //Apenas para ambientação, gera uma menssagem visual para o jogador.
 "0- Sair\n"
 "Escolha sua acao: "
     );
@@ -156,7 +156,7 @@ void celeiro(){
     } else if (opCeleiro == 2) {
         printf("\nVoce acariciou as vacas. Muuuuuu!!\n");
     } else if (opCeleiro == 0) {
-        return;
+        return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
     } else {
         printf("\nOpcao invalida!\n");
     }
@@ -195,7 +195,7 @@ if(opLoja == 1){
     }else if(opVenda == 2){
         printf("Plantas vendidas!!\n"); //dinheiro e inventario ainda nao implementados
     }else if(opVenda == 0){
-        return;
+        return; //Laço de repetição ainda não foi ensinado, logo o return so para o jogo.
     }else{
         printf("Opcao invalida\n");
         return;
@@ -279,7 +279,7 @@ void dormir(){
     printf("===================================\n1-Dormir\n0-Sair\n");
     scanf("%d",&opDormir);
 
-    if (opDormir == 1){//Ainda sem a função de acrescentar o um dia, progesso de plantação e reinicio de pescas disponiveis.
+    if (opDormir == 1){//Ainda sem a função de acrescentar um dia, progesso de plantação e reinicio de pescas disponiveis.
     printf("=========================\n"
            "          CAMA           \n"
            "=========================\n"
