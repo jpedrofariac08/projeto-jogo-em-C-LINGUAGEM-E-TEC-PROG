@@ -264,6 +264,31 @@ Ele apresenta:
 
 [fluxograma detalhado](./fluxogramadetalhado-FINAL.pdf)
 
+---
+
+## 4. Estrutura de Dados
+
+O sistema utilizará variáveis para armazenar e controlar as informações necessárias durante a execução do jogo.
+
+As principais variáveis serão:
+
+```c
+char nomePersonagem[100];
+char nomeFazenda[100];
+
+int dia;
+float dinheiro;
+int casaAtual;
+
+int sementes;
+int peixes;
+int plantas;
+
+int tentativasPescaDia;
+
+int espacosPlantacao[3];
+int crescimento[3];
+
 O fluxograma também está disponível em formato PDF no repositório do projeto.
 
 ---
