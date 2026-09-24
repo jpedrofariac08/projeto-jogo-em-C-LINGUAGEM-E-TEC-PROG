@@ -1,6 +1,6 @@
 # Projeto do jogo em C LINGUAGEM-E-TEC-PROG
 
-O MODELO PEDIDO PELO PROFESSOR ESTA NO MODELOdc1ªentrega.md !
+O MODELO PEDIDO PELO PROFESSOR ESTA na pasta DOCUMENTO_1ªentrega !
 
 ## Índice
 
