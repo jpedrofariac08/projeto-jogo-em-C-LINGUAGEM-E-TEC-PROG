@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //CODIGO BASE INCOMPLETO PARA A PRIMEIRA ENTREGA!
+//PARA ZERAR O JOGO COMPRE A CASA NA LOJA
 void casa(char nomePersonagem[], char nomeFazenda[]){
     int opCasa;
 printf(
