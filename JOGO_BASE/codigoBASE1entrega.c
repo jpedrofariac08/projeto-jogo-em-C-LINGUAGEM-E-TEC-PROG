@@ -205,7 +205,7 @@ if(opLoja == 1){
     scanf("%d", &opCompra);
     if(opCompra == 1){
         printf("Compra de semente efetuada!!\n");
-    }else if(opCompra == 2){
+    }else if(opCompra == 2){ //Objetivo para concluir o jogo, a compra da casa melhor.
         printf(
 "=================================================================================================\n"
 "                              PARABENS! VOCE ZEROU O JOGO!                                       \n"
@@ -261,13 +261,13 @@ if(opLoja == 1){
 "=====================================================================================================\n"
     );   
     }else if(opCompra == 0){
-        return;
+        return; //Laço de repetição ainda não foi ensinado. 
     }else{
     printf("Opcao invalida\n");
     }
     
 }else if(opLoja == 0){
-    return;
+    return; //Laço de repetição ainda não foi ensinado.
 }else{
     printf("Opcao invalida\n");
 }
@@ -299,7 +299,7 @@ void dormir(){
            "+----------------------+\nO Sol nasce em mais um dia lindo!!!\n=========================");
     
 } else if (opDormir == 0) {
-    return;
+    return; //Laço de repetição ainda não foi ensinado.
 }else{
     printf("Opcao invalida");
 }        
@@ -358,9 +358,12 @@ int main()
 "============================================================\n",
 nomeFazenda
 );
-    printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\nEscolha o lugar que voce quer ir: ");
+    printf("\n\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
     scanf("%d", &opLUGAR);
     switch(opLUGAR){
+        case 0:
+        break;
+        
         case 1:
         casa(nomePersonagem, nomeFazenda);
         break;
