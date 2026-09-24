@@ -49,9 +49,10 @@ O jogador poderá explorar quatro locais principais:
 - 🏠 **Casa**
 - 🎣 **Rio**
 - 🌱 **Plantação**
+- 🏬 **Loja**
 - 🐄 **Curral**
 
-A casa será utilizada principalmente para consultar informações e dormir, fazendo o dia avançar. No rio, o jogador poderá pescar e obter peixes para vender. Na plantação, poderá plantar, acompanhar o crescimento e colher produtos para venda. O curral terá uma função exclusivamente interativa, permitindo alimentar e acariciar as vacas, sem interferência na economia ou no progresso financeiro do jogo.
+A casa será utilizada principalmente para consultar informações e dormir, fazendo o dia avançar. No rio, o jogador poderá pescar e obter peixes para vender. Na plantação, poderá plantar, acompanhar o crescimento e colher produtos para venda. Na Loja o player tem direito a comprar e vender itens, podendo chegar ao objetivo final do jogo(comprar a casa). O curral terá uma função exclusivamente interativa, permitindo alimentar e acariciar as vacas, sem interferência na economia ou no progresso financeiro do jogo.
 
 ---
 
