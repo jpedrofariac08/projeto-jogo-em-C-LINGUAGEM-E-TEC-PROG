@@ -151,9 +151,9 @@ void celeiro(){
     scanf("%d", &opCeleiro);
 
     if (opCeleiro == 1) {
-        printf("\nVoce alimentou as vacas. Elas parecem satisfeitas!\n");
+        printf("\nVoce alimentou as vacas. Elas parecem felizes!!\n");
     } else if (opCeleiro == 2) {
-        printf("\nVoce acariciou as vacas. Muuuu!\n");
+        printf("\nVoce acariciou as vacas. Muuuuuu!!\n");
     } else if (opCeleiro == 0) {
         return;
     } else {
