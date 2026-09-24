@@ -291,4 +291,3 @@ int crescimento[3];
 
 O fluxograma também está disponível em formato PDF no repositório do projeto.
 
----
