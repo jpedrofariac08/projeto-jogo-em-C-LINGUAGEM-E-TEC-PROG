@@ -264,6 +264,8 @@ Ele apresenta:
 
 [fluxograma detalhado](./fluxogramadetalhado-FINAL.pdf)
 
+O fluxograma também está disponível em formato PDF no repositório do projeto.
+
 ---
 
 ## 4. Estrutura de Dados
@@ -288,6 +290,3 @@ int tentativasPescaDia;
 
 int espacosPlantacao[3];
 int crescimento[3];
-
-O fluxograma também está disponível em formato PDF no repositório do projeto.
-
