@@ -1,11 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+//JOGO COMPLETO - SITIO DOS SONHOS
+//PARA ZERAR O JOGO JUNTE R$ 1000,00 E COMPRE A CASA NOVA NA LOJA
+
+//VETOR dados[7] - guarda as informacoes do jogador (criado no main e enviado para as funcoes):
+//dados[0] = dinheiro
+//dados[1] = sementes
+//dados[2] = peixes
+//dados[3] = plantas
+//dados[4] = dia atual
+//dados[5] = pescas feitas no dia (maximo 3)
+//dados[6] = casa nova comprada (0 = nao, 1 = sim)
+
+//MATRIZ espacos[3][2] - uma linha para cada espaco da plantacao:
+//espacos[i][0] = 0 (vazio) ou 1 (plantado)
+//espacos[i][1] = dias de crescimento (com 3 dias a planta esta pronta)
 
 void casa(char nomePersonagem[], char nomeFazenda[], int dados[]){
     int opCasa;
 printf(
 "==================================\n"
-"            CASA VELHA            \n"
+"            CASA Velha            \n"
 "==================================\n"
 "+--------------------------------+\n"
 "|                                |\n"
@@ -44,6 +59,7 @@ printf(
         }
     }while(opCasa != 0);
 }
+
 void lago(int dados[]){
     int opLago;
     printf(
@@ -80,7 +96,7 @@ void lago(int dados[]){
 "                     O LAGO ESTA PRONTO PARA PESCAR                           \n"
 "\n"
 );
-    do{ //Repete o menu do lago
+    do{ //Repete o menu do lago ate o jogador escolher sair
         printf("\nPescas restantes hoje: %d\n", 3 - dados[5]);
         printf("1-Pescar\n0-Sair\n===============================================================================\nEscolha sua acao: ");
         scanf("%d", &opLago);
@@ -96,4 +112,440 @@ void lago(int dados[]){
             printf("Opcao invalida!!\n");
         }
     }while(opLago != 0);
+}
+
+void plantacao(int dados[], int espacos[3][2]){
+    int opPlantacao, i, quantidade;
+printf(
+"===============================================================================\n"
+"                        PLANTACAO - VISAO DE CIMA                              \n"
+"===============================================================================\n"
+"\n"
+" ----------------------------------------------------------------------------- \n"
+" |                                                                           | \n"
+" |                         AREA DE PLANTACAO                                 | \n"
+" |                                                                           | \n"
+" |        ESPACO 1            ESPACO 2            ESPACO 3                   | \n"
+" |                                                                           | \n"
+" |      +-------------+      +-------------+      +-------------+            | \n"
+" |      |             |      |             |      |             |            | \n"
+" |      |    \\ | /    |      |    \\ | /    |      |    \\ | /    |            | \n"
+" |      |     \\|/     |      |     \\|/     |      |     \\|/     |            | \n"
+" |      |    --*--    |      |    --*--    |      |    --*--    |            | \n"
+" |      |     /|\\     |      |     /|\\     |      |     /|\\     |            | \n"
+" |      |    / | \\    |      |    / | \\    |      |    / | \\    |            | \n"
+" |      |             |      |             |      |             |            | \n"
+" |      +-------------+      +-------------+      +-------------+            | \n"
+" |                                                                           | \n"
+" |                   AS PLANTAS ESTAO BEM CUIDADAS                           | \n"
+" |                                                                           | \n"
+" ----------------------------------------------------------------------------- \n"
+"\n"
+    );
+    do{ //Repete o menu da plantacao ate o jogador escolher sair
+        printf("\n--------- SITUACAO DOS ESPACOS ---------\n");
+        for(i = 0; i < 3; i++){ //Percorre a matriz mostrando cada espaco
+            if(espacos[i][0] == 0){
+                printf("Espaco %d: vazio\n", i + 1);
+            }else if(espacos[i][1] >= 3){
+                printf("Espaco %d: PRONTO PARA COLHER!\n", i + 1);
+            }else{
+                printf("Espaco %d: crescendo (%d de 3 dias)\n", i + 1, espacos[i][1]);
+            }
+        }
+        printf("Sementes no inventario: %d\n", dados[1]);
+        printf("\n1-Plantar\n2-Regar plantacao\n3-Colher\n0-Sair\n===============================================================================\nEscolha sua acao: ");
+        scanf("%d", &opPlantacao);
+
+        if (opPlantacao == 1){
+            quantidade = 0;
+            for(i = 0; i < 3; i++){ //Planta uma semente em cada espaco vazio
+                if(espacos[i][0] == 0){
+                    if(dados[1] > 0){
+                        espacos[i][0] = 1;      //Espaco agora esta plantado
+                        espacos[i][1] = 0;      //Comeca com 0 dias de crescimento
+                        dados[1] = dados[1] - 1; //Gasta 1 semente
+                        quantidade = quantidade + 1;
+                    }
+                }
+            }
+            if(quantidade > 0){
+                printf("\n%d semente(s) plantada(s)!!\n", quantidade);
+            }else if(dados[1] == 0){
+                printf("\nVoce nao tem sementes! Compre na Loja.\n");
+            }else{
+                printf("\nTodos os espacos ja estao ocupados!\n");
+            }
+        } else if (opPlantacao == 2){
+            quantidade = 0;
+            for(i = 0; i < 3; i++){ //Conta quantos espacos tem planta
+                if(espacos[i][0] == 1){
+                    quantidade = quantidade + 1;
+                }
+            }
+            if(quantidade > 0){
+                printf("\nVoce regou as plantas, agora elas cresceram mais saudaveis!!\n");
+            }else{
+                printf("\nNao ha nada plantado para regar.\n");
+            }
+        } else if (opPlantacao == 3){
+            quantidade = 0;
+            for(i = 0; i < 3; i++){ //Colhe so os espacos com 3 dias de crescimento
+                if(espacos[i][0] == 1){
+                    if(espacos[i][1] >= 3){
+                        espacos[i][0] = 0;      //Espaco volta a ficar vazio
+                        espacos[i][1] = 0;
+                        dados[3] = dados[3] + 1; //Mais 1 planta no inventario
+                        quantidade = quantidade + 1;
+                    }
+                }
+            }
+            if(quantidade > 0){
+                printf("\nVoce colheu %d planta(s)!! Venda na Loja.\n", quantidade);
+            }else{
+                printf("\nNenhuma planta esta pronta para colher ainda.\n");
+            }
+        } else if (opPlantacao != 0){
+            printf("Opcao invalida!!\n");
+        }
+    }while(opPlantacao != 0);
+}
+
+void celeiro(){
+    int opCeleiro; // Nao ha consumo de itens, sistema de fome ou qualquer outra consequencia no jogo.
+    printf(
+"==================================\n"
+"             CELEIRO              \n"
+"==================================\n"
+"+--------------------------------+\n"
+"|           ^__^                 |\n"
+"|           (oo)\\_______         |\n"
+"|           (__)\\       )\\/\\     |\n"
+"|               ||----w |        |\n"
+"|               ||     ||        |\n"
+"|                                |\n"
+"|   ~~~~~~~~~~~~~~~~~~~~~~~~~~   |\n"
+"|   |  |  |  |  |  |  |  |  |  | |\n"
+"|   |__|__|__|__|__|__|__|__|__| |\n"
+"+--------------------------------+\n"
+    );
+    do{ //Repete o menu do celeiro ate o jogador escolher sair
+        printf(
+"\n1- Alimentar as vacas\n" //Apenas para ambientacao, gera uma mensagem visual para o jogador.
+"2- Acariciar as vacas\n" //Apenas para ambientacao, gera uma mensagem visual para o jogador.
+"0- Sair\n"
+"Escolha sua acao: "
+        );
+        scanf("%d", &opCeleiro);
+
+        if (opCeleiro == 1) {
+            printf("\nVoce alimentou as vacas. Elas parecem felizes!!\n");
+        } else if (opCeleiro == 2) {
+            printf("\nVoce acariciou as vacas. Muuuuuu!!\n");
+        } else if (opCeleiro != 0) {
+            printf("\nOpcao invalida!\n");
+        }
+    }while(opCeleiro != 0);
+}
+
+void loja(int dados[]){
+    int opLoja, opVenda, opCompra, quantidade;
+    printf(
+"==========================================\n"
+"                  LOJA                    \n"
+"==========================================\n"
+"+---------------------------------------+\n"
+"|         ______________________        |\n"
+"|        /                      \\       |\n"
+"|       /________________________\\      |\n"
+"|       |   ==================   |      |\n"
+"|       |   |     LOJINHA    |   |      |\n"
+"|       |   ==================   |      |\n"
+"|       |                        |      |\n"
+"|       |  .--------.  .------.  |      |\n"
+"|       |  | []  [] |  |      |  |      |\n"
+"|       |  | []  [] |  |      |  |      |\n"
+"|       |  |        |  |   O  |  |      |\n"
+"|       |  '--------'  |      |  |      |\n"
+"|       |              |      |  |      |\n"
+"|       |______________|______|__|      |\n"
+"|       /__________________________\\    |\n"
+"+---------------------------------------+\n"
+);
+    do{ //Repete o menu da loja ate o jogador sair ou comprar a casa
+        printf("\nSeu dinheiro: R$ %d,00\n", dados[0]);
+        printf("1- Vender\n2- Comprar\n0- Sair\n==========================================\nEscolha sua acao: ");
+        scanf("%d", &opLoja);
+        if(opLoja == 1){
+            printf("\nEscolha o que deseja vender!!\n1- Peixe: 20,00 (voce tem %d)\n2- Planta: 100,00 (voce tem %d)\n0- Voltar\nEscolha a opcao: ", dados[2], dados[3]);
+            scanf("%d", &opVenda);
+            if(opVenda == 1){
+                if(dados[2] > 0){ //Vende todos os peixes
+                    dados[0] = dados[0] + dados[2] * 20;
+                    printf("\n%d peixe(s) vendido(s) por R$ %d,00!!\n", dados[2], dados[2] * 20);
+                    dados[2] = 0;
+                }else{
+                    printf("\nVoce nao tem peixes para vender!\n");
+                }
+            }else if(opVenda == 2){
+                if(dados[3] > 0){ //Vende todas as plantas
+                    dados[0] = dados[0] + dados[3] * 100;
+                    printf("\n%d planta(s) vendida(s) por R$ %d,00!!\n", dados[3], dados[3] * 100);
+                    dados[3] = 0;
+                }else{
+                    printf("\nVoce nao tem plantas para vender!\n");
+                }
+            }else if(opVenda != 0){
+                printf("Opcao invalida\n");
+            }
+        }else if(opLoja == 2){
+            printf("\nEscolha o que deseja comprar!!\n1- Semente: 10,00\n2- CASA NOVA(objetivo final): 1000,00\n0- Voltar\nEscolha a opcao: ");
+            scanf("%d", &opCompra);
+            if(opCompra == 1){
+                do{ //Pede a quantidade ate o jogador digitar um numero valido
+                    printf("Quantas sementes deseja comprar? (0 para cancelar): ");
+                    scanf("%d", &quantidade);
+                    if(quantidade < 0){
+                        printf("Quantidade invalida!\n");
+                    }
+                }while(quantidade < 0);
+
+                if(quantidade > 0){
+                    if(quantidade * 10 <= dados[0]){
+                        dados[0] = dados[0] - quantidade * 10;
+                        dados[1] = dados[1] + quantidade;
+                        printf("\nCompra de %d semente(s) efetuada!! Voce pagou R$ %d,00\n", quantidade, quantidade * 10);
+                    }else{
+                        printf("\nDinheiro insuficiente!\n");
+                    }
+                }
+            }else if(opCompra == 2){ //Objetivo para concluir o jogo, a compra da casa melhor.
+                if(dados[0] >= 1000){
+                    dados[0] = dados[0] - 1000;
+                    dados[6] = 1; //Marca que a casa foi comprada
+                    opLoja = 0;   //Sai da loja
+        printf(
+"=================================================================================================\n"
+"                              PARABENS! VOCE ZEROU O JOGO!                                       \n"
+"=================================================================================================\n"
+"\n"
+" ----------------------------------------------------------------------------------------------- \n"
+" |                                                                                             | \n"
+" |                       VOCE CONQUISTOU SUA CASA NOVA!                                        | \n"
+" |                                                                                             | \n"
+" |                                  __________________________                                 | \n"
+" |                            _____/_________________________/\\                                | \n"
+" |                       ____/______________________________/  \\                               | \n"
+" |                  ____/__________________________________/____\\                              | \n"
+" |                 /_____________________________________________\\                             | \n"
+" |                 |                                             |\\                            | \n"
+" |                 |      +---------+        +---------+         | \\                           | \n"
+" |                 |      |  |   |  |        |  |   |  |         |  |                          | \n"
+" |                 |      |--+---+--|        |--+---+--|         |  |                          | \n"
+" |                 |      |  |   |  |        |  |   |  |         |  |                          | \n"
+" |                 |      +---------+        +---------+         |  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |=============================================|  |                          | \n"
+" |                 |||||||||||||||||||||||||||||||||||||||||||||||  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |   +---------+                  +---------+  |  |                          | \n"
+" |                 |   |  |   |  |                  |  |   |  |  |  |                          | \n"
+" |                 |   |--+---+--|                  |--+---+--|  |  |                          | \n"
+" |                 |   |  |   |  |                  |  |   |  |  |  |                          | \n"
+" |                 |   +---------+                  +---------+  |  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |                  ___________                |  |                          | \n"
+" |                 |                 |           |               |  |                          | \n"
+" |                 |                 |   _____   |               |  |                          | \n"
+" |                 |                 |  |     |  |               |  |                          | \n"
+" |                 |                 |  |     |  |               |  |                          | \n"
+" |                 |                 |  |    o|  |               |  |                          | \n"
+" |                 |                 |__|_____|__|               |  |                          | \n"
+" |                 |_____________________________________________|  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |                                             | /                           | \n"
+" |                 |_____________________________________________|/                            | \n"
+" |                                                                                             | \n"
+" |               &&&&&                 &&&&&                 &&&&&                 &&&&&       | \n"
+" |              &&&&&&&               &&&&&&&               &&&&&&&               &&&&&&&      | \n"
+" |                |||                   |||                   |||                   |||        | \n"
+" |                                                                                             | \n"
+" |                     SUA CASA MODERNA DE MADEIRA ESTA PRONTA!                                | \n"
+" |                                APROVEITE MUITO!!!                                           | \n"
+" --------------------------------------------------------------------------------------------------- \n"
+"\n"
+"                                      FIM DE JOGO - PARABENS!                                      \n"
+"\n"
+"=====================================================================================================\n"
+        );
+                    printf("Voce zerou o jogo em %d dia(s)!!\n", dados[4]);
+                }else{
+                    printf("\nVoce precisa de R$ 1000,00 para comprar a casa nova. Faltam R$ %d,00\n", 1000 - dados[0]);
+                }
+            }else if(opCompra != 0){
+                printf("Opcao invalida\n");
+            }
+        }else if(opLoja != 0){
+            printf("Opcao invalida\n");
+        }
+    }while(opLoja != 0);
+}
+
+void dormir(int dados[], int espacos[3][2]){
+    int opDormir, i;
+    printf("===================================\n1-Dormir\n0-Sair\nEscolha sua acao: ");
+    scanf("%d",&opDormir);
+
+    if (opDormir == 1){
+    printf("=========================\n"
+           "          CAMA           \n"
+           "=========================\n"
+           "+------------+\n"
+           "|   Z z      |\n"
+           "|    O       |\n"
+           "|   /|\\__    |\n"
+           "|   / \\      |\n"
+           "+------------+\n");
+    printf("=========================\n");
+    printf("+----------------------+\n"
+           "|      \\   |   /       |\n"
+           "|        .---.         |\n"
+           "|    -- (* ^ *) --     |\n"
+           "|        `---'         |\n"
+           "|      /   |   \\       |\n"
+           "+----------------------+\nO Sol nasce em mais um dia lindo!!!\n=========================\n");
+
+        dados[4] = dados[4] + 1; //Passa um dia
+        dados[5] = 0;            //Renova as 3 pescas do dia
+        for(i = 0; i < 3; i++){  //Faz as plantas crescerem 1 dia
+            if(espacos[i][0] == 1){
+                if(espacos[i][1] < 3){
+                    espacos[i][1] = espacos[i][1] + 1;
+                }
+            }
+        }
+        printf("Bom dia! Hoje e o dia %d.\n", dados[4]);
+    } else if (opDormir != 0) {
+        printf("Opcao invalida\n");
+    }
+}
+
+int main()
+{
+    char nomePersonagem[100], nomeFazenda[100];
+    int opLUGAR, i;
+    int dados[7];
+    int espacos[3][2];
+
+    //Valores iniciais do jogo
+    dados[0] = 100; //Dinheiro inicial
+    dados[1] = 0;   //Sementes
+    dados[2] = 0;   //Peixes
+    dados[3] = 0;   //Plantas
+    dados[4] = 1;   //Comeca no dia 1
+    dados[5] = 0;   //Pescas feitas hoje
+    dados[6] = 0;   //Casa nova ainda nao comprada
+
+    for(i = 0; i < 3; i++){ //Todos os espacos da plantacao comecam vazios
+        espacos[i][0] = 0;
+        espacos[i][1] = 0;
+    }
+
+    printf("------------------------------------------------------------------\n");
+    printf("                         Sitio dos sonhos!\n");
+    printf("------------------------------------------------------------------\n\nDigite o seu nome: ");
+    scanf("%s", nomePersonagem);
+    printf("Digite o nome da sua Fazenda: ");
+    scanf("%s", nomeFazenda);
+
+    do{ //Laco principal do jogo: volta para o mapa ate sair ou zerar
+    printf(
+"\n============================================================\n"
+"                       FAZENDA %s\n"
+"============================================================\n"
+"\n"
+"       ~~~~~~                                  +------------+\n"
+"    ~~~~~~~~~~~~                               |    LOJA    |\n"
+"   ~~~  LAGO  ~~~                              |     $      |\n"
+"    ~~~ ><> ~~~~                               +-----+------+\n"
+"      ~~~~~~~                                        |\n"
+"                                                     |\n"
+"                                                     |\n"
+"                          +--------------------------+\n"
+"                          |\n"
+"                    +-----+-----+\n"
+"                    |    CASA   |\n"
+"                    |     /\\    |\n"
+"                    |    /__\\   |\n"
+"                    |    |  |   |\n"
+"                    +-----+-----+\n"
+"                          |\n"
+"                          |\n"
+"                    +-----+-----+\n"
+"                    |  CELEIRO  |\n"
+"                    |     /\\    |\n"
+"                    |    /__\\   |\n"
+"                    |    |[]|   |\n"
+"                    +-----+-----+\n"
+"                          |\n"
+"                          |\n"
+"          +---------------+----------------+\n"
+"          |                                |\n"
+"          |           PLANTACAO            |\n"
+"          |                                |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |                                |\n"
+"          +--------------------------------+\n"
+"\n"
+"============================================================\n",
+nomeFazenda
+);
+        printf("Dia: %d | Dinheiro: R$ %d,00\n", dados[4], dados[0]);
+        printf("\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
+        scanf("%d", &opLUGAR);
+
+        if(opLUGAR < 0){
+            printf("Opcao invalida!\n");
+        }else if(opLUGAR > 6){
+            printf("Opcao invalida!\n");
+        }else{
+            switch(opLUGAR){
+                case 0:
+                printf("Saindo do jogo... Ate a proxima!\n");
+                break;
+
+                case 1:
+                casa(nomePersonagem, nomeFazenda, dados);
+                break;
+
+                case 2:
+                lago(dados);
+                break;
+
+                case 3:
+                plantacao(dados, espacos);
+                break;
+
+                case 4:
+                celeiro();
+                break;
+
+                case 5:
+                loja(dados);
+                if(dados[6] == 1){ //Se comprou a casa, o jogo termina
+                    opLUGAR = 0;
+                }
+                break;
+
+                case 6:
+                dormir(dados, espacos);
+                break;
+            }
+        }
+    }while(opLUGAR != 0);
+
+    return 0;
 }
