@@ -375,3 +375,42 @@ void loja(int dados[]){
         }
     }while(opLoja != 0);
 }
+
+void dormir(int dados[], int espacos[3][2]){
+    int opDormir, i;
+    printf("===================================\n1-Dormir\n0-Sair\nEscolha sua acao: ");
+    scanf("%d",&opDormir);
+
+    if (opDormir == 1){
+    printf("=========================\n"
+           "          CAMA           \n"
+           "=========================\n"
+           "+------------+\n"
+           "|   Z z      |\n"
+           "|    O       |\n"
+           "|   /|\\__    |\n"
+           "|   / \\      |\n"
+           "+------------+\n");
+    printf("=========================\n");
+    printf("+----------------------+\n"
+           "|      \\   |   /       |\n"
+           "|        .---.         |\n"
+           "|    -- (* ^ *) --     |\n"
+           "|        `---'         |\n"
+           "|      /   |   \\       |\n"
+           "+----------------------+\nO Sol nasce em mais um dia lindo!!!\n=========================\n");
+
+        dados[4] = dados[4] + 1; //Passa um dia
+        dados[5] = 0;            //Renova as 3 pescas do dia
+        for(i = 0; i < 3; i++){  //Faz as plantas crescerem 1 dia
+            if(espacos[i][0] == 1){
+                if(espacos[i][1] < 3){
+                    espacos[i][1] = espacos[i][1] + 1;
+                }
+            }
+        }
+        printf("Bom dia! Hoje e o dia %d.\n", dados[4]);
+    } else if (opDormir != 0) {
+        printf("Opcao invalida\n");
+    }
+}
