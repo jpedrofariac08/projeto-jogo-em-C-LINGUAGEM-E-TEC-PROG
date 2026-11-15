@@ -414,3 +414,123 @@ void dormir(int dados[], int espacos[3][2]){
         printf("Opcao invalida\n");
     }
 }
+
+int main()
+{
+    char nomePersonagem[100], nomeFazenda[100];
+    int opLUGAR, i;
+    int dados[7];
+    int espacos[3][2];
+
+    //Valores iniciais do jogo
+    dados[0] = 100; //Dinheiro inicial
+    dados[1] = 0;   //Sementes
+    dados[2] = 0;   //Peixes
+    dados[3] = 0;   //Plantas
+    dados[4] = 1;   //Comeca no dia 1
+    dados[5] = 0;   //Pescas feitas hoje
+    dados[6] = 0;   //Casa nova ainda nao comprada
+
+    for(i = 0; i < 3; i++){ //Todos os espacos da plantacao comecam vazios
+        espacos[i][0] = 0;
+        espacos[i][1] = 0;
+    }
+
+    printf("------------------------------------------------------------------\n");
+    printf("                         Sitio dos sonhos!\n");
+    printf("------------------------------------------------------------------\n\nDigite o seu nome: ");
+    scanf("%s", nomePersonagem);
+    printf("Digite o nome da sua Fazenda: ");
+    scanf("%s", nomeFazenda);
+
+    do{ //Laco principal do jogo: volta para o mapa ate sair ou zerar
+    printf(
+"\n============================================================\n"
+"                       FAZENDA %s\n"
+"============================================================\n"
+"\n"
+"       ~~~~~~                                  +------------+\n"
+"    ~~~~~~~~~~~~                               |    LOJA    |\n"
+"   ~~~  LAGO  ~~~                              |     $      |\n"
+"    ~~~ ><> ~~~~                               +-----+------+\n"
+"      ~~~~~~~                                        |\n"
+"                                                     |\n"
+"                                                     |\n"
+"                          +--------------------------+\n"
+"                          |\n"
+"                    +-----+-----+\n"
+"                    |    CASA   |\n"
+"                    |     /\\    |\n"
+"                    |    /__\\   |\n"
+"                    |    |  |   |\n"
+"                    +-----+-----+\n"
+"                          |\n"
+"                          |\n"
+"                    +-----+-----+\n"
+"                    |  CELEIRO  |\n"
+"                    |     /\\    |\n"
+"                    |    /__\\   |\n"
+"                    |    |[]|   |\n"
+"                    +-----+-----+\n"
+"                          |\n"
+"                          |\n"
+"          +---------------+----------------+\n"
+"          |                                |\n"
+"          |           PLANTACAO            |\n"
+"          |                                |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |      # # # # # # # # # #       |\n"
+"          |                                |\n"
+"          +--------------------------------+\n"
+"\n"
+"============================================================\n",
+nomeFazenda
+);
+        printf("Dia: %d | Dinheiro: R$ %d,00\n", dados[4], dados[0]);
+        printf("\n1-Casa\n2-Lago\n3-Plantacao\n4-Celeiro\n5-Loja\n6-Dormir\n0-Sair\nEscolha o lugar que voce quer ir: ");
+        scanf("%d", &opLUGAR);
+
+        if(opLUGAR < 0){
+            printf("Opcao invalida!\n");
+        }else if(opLUGAR > 6){
+            printf("Opcao invalida!\n");
+        }else{
+            switch(opLUGAR){
+                case 0:
+                printf("Saindo do jogo... Ate a proxima!\n");
+                break;
+
+                case 1:
+                casa(nomePersonagem, nomeFazenda, dados);
+                break;
+
+                case 2:
+                lago(dados);
+                break;
+
+                case 3:
+                plantacao(dados, espacos);
+                break;
+
+                case 4:
+                celeiro();
+                break;
+
+                case 5:
+                loja(dados);
+                if(dados[6] == 1){ //Se comprou a casa, o jogo termina
+                    opLUGAR = 0;
+                }
+                break;
+
+                case 6:
+                dormir(dados, espacos);
+                break;
+            }
+        }
+    }while(opLUGAR != 0);
+
+    return 0;
+}
