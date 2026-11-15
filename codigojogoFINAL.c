@@ -232,3 +232,146 @@ void celeiro(){
         }
     }while(opCeleiro != 0);
 }
+
+void loja(int dados[]){
+    int opLoja, opVenda, opCompra, quantidade;
+    printf(
+"==========================================\n"
+"                  LOJA                    \n"
+"==========================================\n"
+"+---------------------------------------+\n"
+"|         ______________________        |\n"
+"|        /                      \\       |\n"
+"|       /________________________\\      |\n"
+"|       |   ==================   |      |\n"
+"|       |   |     LOJINHA    |   |      |\n"
+"|       |   ==================   |      |\n"
+"|       |                        |      |\n"
+"|       |  .--------.  .------.  |      |\n"
+"|       |  | []  [] |  |      |  |      |\n"
+"|       |  | []  [] |  |      |  |      |\n"
+"|       |  |        |  |   O  |  |      |\n"
+"|       |  '--------'  |      |  |      |\n"
+"|       |              |      |  |      |\n"
+"|       |______________|______|__|      |\n"
+"|       /__________________________\\    |\n"
+"+---------------------------------------+\n"
+);
+    do{ //Repete o menu da loja ate o jogador sair ou comprar a casa
+        printf("\nSeu dinheiro: R$ %d,00\n", dados[0]);
+        printf("1- Vender\n2- Comprar\n0- Sair\n==========================================\nEscolha sua acao: ");
+        scanf("%d", &opLoja);
+        if(opLoja == 1){
+            printf("\nEscolha o que deseja vender!!\n1- Peixe: 20,00 (voce tem %d)\n2- Planta: 100,00 (voce tem %d)\n0- Voltar\nEscolha a opcao: ", dados[2], dados[3]);
+            scanf("%d", &opVenda);
+            if(opVenda == 1){
+                if(dados[2] > 0){ //Vende todos os peixes
+                    dados[0] = dados[0] + dados[2] * 20;
+                    printf("\n%d peixe(s) vendido(s) por R$ %d,00!!\n", dados[2], dados[2] * 20);
+                    dados[2] = 0;
+                }else{
+                    printf("\nVoce nao tem peixes para vender!\n");
+                }
+            }else if(opVenda == 2){
+                if(dados[3] > 0){ //Vende todas as plantas
+                    dados[0] = dados[0] + dados[3] * 100;
+                    printf("\n%d planta(s) vendida(s) por R$ %d,00!!\n", dados[3], dados[3] * 100);
+                    dados[3] = 0;
+                }else{
+                    printf("\nVoce nao tem plantas para vender!\n");
+                }
+            }else if(opVenda != 0){
+                printf("Opcao invalida\n");
+            }
+        }else if(opLoja == 2){
+            printf("\nEscolha o que deseja comprar!!\n1- Semente: 10,00\n2- CASA NOVA(objetivo final): 1000,00\n0- Voltar\nEscolha a opcao: ");
+            scanf("%d", &opCompra);
+            if(opCompra == 1){
+                do{ //Pede a quantidade ate o jogador digitar um numero valido
+                    printf("Quantas sementes deseja comprar? (0 para cancelar): ");
+                    scanf("%d", &quantidade);
+                    if(quantidade < 0){
+                        printf("Quantidade invalida!\n");
+                    }
+                }while(quantidade < 0);
+
+                if(quantidade > 0){
+                    if(quantidade * 10 <= dados[0]){
+                        dados[0] = dados[0] - quantidade * 10;
+                        dados[1] = dados[1] + quantidade;
+                        printf("\nCompra de %d semente(s) efetuada!! Voce pagou R$ %d,00\n", quantidade, quantidade * 10);
+                    }else{
+                        printf("\nDinheiro insuficiente!\n");
+                    }
+                }
+            }else if(opCompra == 2){ //Objetivo para concluir o jogo, a compra da casa melhor.
+                if(dados[0] >= 1000){
+                    dados[0] = dados[0] - 1000;
+                    dados[6] = 1; //Marca que a casa foi comprada
+                    opLoja = 0;   //Sai da loja
+        printf(
+"=================================================================================================\n"
+"                              PARABENS! VOCE ZEROU O JOGO!                                       \n"
+"=================================================================================================\n"
+"\n"
+" ----------------------------------------------------------------------------------------------- \n"
+" |                                                                                             | \n"
+" |                       VOCE CONQUISTOU SUA CASA NOVA!                                        | \n"
+" |                                                                                             | \n"
+" |                                  __________________________                                 | \n"
+" |                            _____/_________________________/\\                                | \n"
+" |                       ____/______________________________/  \\                               | \n"
+" |                  ____/__________________________________/____\\                              | \n"
+" |                 /_____________________________________________\\                             | \n"
+" |                 |                                             |\\                            | \n"
+" |                 |      +---------+        +---------+         | \\                           | \n"
+" |                 |      |  |   |  |        |  |   |  |         |  |                          | \n"
+" |                 |      |--+---+--|        |--+---+--|         |  |                          | \n"
+" |                 |      |  |   |  |        |  |   |  |         |  |                          | \n"
+" |                 |      +---------+        +---------+         |  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |=============================================|  |                          | \n"
+" |                 |||||||||||||||||||||||||||||||||||||||||||||||  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |   +---------+                  +---------+  |  |                          | \n"
+" |                 |   |  |   |  |                  |  |   |  |  |  |                          | \n"
+" |                 |   |--+---+--|                  |--+---+--|  |  |                          | \n"
+" |                 |   |  |   |  |                  |  |   |  |  |  |                          | \n"
+" |                 |   +---------+                  +---------+  |  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |                  ___________                |  |                          | \n"
+" |                 |                 |           |               |  |                          | \n"
+" |                 |                 |   _____   |               |  |                          | \n"
+" |                 |                 |  |     |  |               |  |                          | \n"
+" |                 |                 |  |     |  |               |  |                          | \n"
+" |                 |                 |  |    o|  |               |  |                          | \n"
+" |                 |                 |__|_____|__|               |  |                          | \n"
+" |                 |_____________________________________________|  |                          | \n"
+" |                 |                                             |  |                          | \n"
+" |                 |                                             | /                           | \n"
+" |                 |_____________________________________________|/                            | \n"
+" |                                                                                             | \n"
+" |               &&&&&                 &&&&&                 &&&&&                 &&&&&       | \n"
+" |              &&&&&&&               &&&&&&&               &&&&&&&               &&&&&&&      | \n"
+" |                |||                   |||                   |||                   |||        | \n"
+" |                                                                                             | \n"
+" |                     SUA CASA MODERNA DE MADEIRA ESTA PRONTA!                                | \n"
+" |                                APROVEITE MUITO!!!                                           | \n"
+" --------------------------------------------------------------------------------------------------- \n"
+"\n"
+"                                      FIM DE JOGO - PARABENS!                                      \n"
+"\n"
+"=====================================================================================================\n"
+        );
+                    printf("Voce zerou o jogo em %d dia(s)!!\n", dados[4]);
+                }else{
+                    printf("\nVoce precisa de R$ 1000,00 para comprar a casa nova. Faltam R$ %d,00\n", 1000 - dados[0]);
+                }
+            }else if(opCompra != 0){
+                printf("Opcao invalida\n");
+            }
+        }else if(opLoja != 0){
+            printf("Opcao invalida\n");
+        }
+    }while(opLoja != 0);
+}
