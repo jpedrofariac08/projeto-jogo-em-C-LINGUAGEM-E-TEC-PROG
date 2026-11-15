@@ -5,7 +5,7 @@ void casa(char nomePersonagem[], char nomeFazenda[], int dados[]){
     int opCasa;
 printf(
 "==================================\n"
-"            CASA Velha            \n"
+"            CASA VELHA            \n"
 "==================================\n"
 "+--------------------------------+\n"
 "|                                |\n"
@@ -98,7 +98,6 @@ void lago(int dados[]){
         }
     }while(opLago != 0);
 }
-
 
 void plantacao(int dados[], int espacos[3][2]){
     int opPlantacao, i, quantidade;
@@ -197,3 +196,39 @@ printf(
     }while(opPlantacao != 0);
 }
 
+void celeiro(){
+    int opCeleiro; // Nao ha consumo de itens, sistema de fome ou qualquer outra consequencia no jogo.
+    printf(
+"==================================\n"
+"             CELEIRO              \n"
+"==================================\n"
+"+--------------------------------+\n"
+"|           ^__^                 |\n"
+"|           (oo)\\_______         |\n"
+"|           (__)\\       )\\/\\     |\n"
+"|               ||----w |        |\n"
+"|               ||     ||        |\n"
+"|                                |\n"
+"|   ~~~~~~~~~~~~~~~~~~~~~~~~~~   |\n"
+"|   |  |  |  |  |  |  |  |  |  | |\n"
+"|   |__|__|__|__|__|__|__|__|__| |\n"
+"+--------------------------------+\n"
+    );
+    do{ //Repete o menu do celeiro ate o jogador escolher sair
+        printf(
+"\n1- Alimentar as vacas\n" //Apenas para ambientacao, gera uma mensagem visual para o jogador.
+"2- Acariciar as vacas\n" //Apenas para ambientacao, gera uma mensagem visual para o jogador.
+"0- Sair\n"
+"Escolha sua acao: "
+        );
+        scanf("%d", &opCeleiro);
+
+        if (opCeleiro == 1) {
+            printf("\nVoce alimentou as vacas. Elas parecem felizes!!\n");
+        } else if (opCeleiro == 2) {
+            printf("\nVoce acariciou as vacas. Muuuuuu!!\n");
+        } else if (opCeleiro != 0) {
+            printf("\nOpcao invalida!\n");
+        }
+    }while(opCeleiro != 0);
+}
